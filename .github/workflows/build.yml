@@ -13,7 +13,7 @@ jobs:
       - name: Unzip project
         run: |
           mkdir -p work
-          unzip -o "$(ls *.zip | head -n1)" -d work
+          unzip -o "$(ls *.zip | sort -V | tail -n1)" -d work
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
